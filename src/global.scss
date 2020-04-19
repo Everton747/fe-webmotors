@@ -1,7 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700&display=swap');
+
+$red: #f3123c;
+$white: #ffffff;
+
 * {
   margin: 0;
   padding: 0;
   border: 0;
+  box-sizing: border-box;
+  outline: none;
 }
 
 ul, ol, li {
@@ -9,5 +16,19 @@ ul, ol, li {
 }
 
 body {
+  font: 400 14px Poppins, sans-serif;
+  -webkit-font-smoothing: antialiased;
   background: #f3f5f8;
+}
+
+button {
+  color: white;
+  background: $red;
+  border-radius: 4px;
+  font-size: 18px;
+  text-transform: uppercase;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
