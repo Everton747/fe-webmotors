@@ -18,7 +18,7 @@ export default function Search() {
           <div className="select-group">
             Raio:
             <select type="text" className="radius" placeholder='Raio'>
-              <option value="" selected>10km</option>
+              <option value="" selected>100km</option>
             </select>
           </div>
         </div>
