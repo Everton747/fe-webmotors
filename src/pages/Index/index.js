@@ -17,7 +17,6 @@ export default function Index() {
     response.then(res => { updateVehicles(res.data) });
   }, []);
 
-
   return (
     <>
     <Header></Header>
