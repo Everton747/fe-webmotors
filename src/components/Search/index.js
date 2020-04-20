@@ -6,8 +6,8 @@ import './styles.scss';
 
 export default function Search() {
 
-  const [zeroKm, updateZeroKm] = useState(false);
-  const [used, updateUsed] = useState(false);
+  const [zeroKm, updateZeroKm] = useState(true);
+  const [used, updateUsed] = useState(true);
 
   const [city, updateCity] = useState('São Paulo');
 
@@ -28,6 +28,13 @@ export default function Search() {
   function handleUpdateVersions(e) {
     const response = api.get('/version/', { params: { 'ModelID': e.target.value } });
     response.then(res => { updateVersion(res.data) });
+  }
+
+  function handleClearSearch() {
+    var elements = document.getElementsByTagName('select');
+    for (var i = 0; i < elements.length; i++) {
+      elements[i].selectedIndex = 0;
+    }
   }
 
   return (
@@ -53,7 +60,7 @@ export default function Search() {
         </div>
         <div className="select-group">
           Marca:
-          <select type="text" className="vehicle-make" onChange={handleUpdateModels}>
+          <select type="text" className="vehicle-make" id="vehicle-make" onChange={handleUpdateModels}>
             <option>Todas</option>
             {make.map(make => (
               <option key={make.ID} value={make.ID}>{make.Name}</option>
@@ -62,20 +69,20 @@ export default function Search() {
         </div>
         <div className="select-group">
           Modelos:
-          <select type="text" className="vehicle-model" onChange={handleUpdateVersions}>
+          <select type="text" className="vehicle-model" id="vehicle-model" onChange={handleUpdateVersions}>
             <option>Todos</option>
             {model.map(model => (
               <option key={model.ID} value={model.ID}>{model.Name}</option>
             ))}
           </select>
         </div>
-        <select type="text" className="vehicle-year">
+        <select type="text" className="vehicle-year" id="vehicle-year">
           <option value="">Ano Desejado</option>
           <option value="">2013</option>
           <option value="">2012</option>
           <option value="">2011</option>
         </select>
-        <select type="text" className="vehicle-price">
+        <select type="text" className="vehicle-price" id="vehicle-price">
           <option value="">Faixa de preço</option>
           <option value="">20 a 40 mil</option>
           <option value="">40 a 60 mil</option>
@@ -83,7 +90,7 @@ export default function Search() {
         </select>
         <div className="select-group input-group">
           Versão:
-          <select type="text" className="vehicle-version">
+          <select type="text" className="vehicle-version" id="vehicle-version">
             <option>Todas</option>
             {version.map(version => (
               <option key={version.ID} value={version.ID}>{version.Name}</option>
@@ -93,7 +100,7 @@ export default function Search() {
 
         <span> > Busca Avançada</span>
         <div className="search-options">
-          {/* <h5>Limpar Filtros</h5> */}
+          <h5 onClick={handleClearSearch}>Limpar Filtros</h5>
           <button>Ver Ofertas</button>
         </div>
       </section>

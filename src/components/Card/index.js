@@ -4,7 +4,6 @@ import './styles.scss';
 
 export default function Card(props) {
 
-  console.log(props)
   return (
     <>
       <section className="card">
