@@ -1,221 +1,220 @@
 @import "../../global.scss";
 
-section {
+.inputs {
   width: 100%;
   height: 100%;
   max-width: 933px;
-  max-height: 312px;
   margin: 20px auto;
   padding: 20px;
   border-radius: 4px;
   background: $white;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 15px;
-}
+  grid-gap: 12px;
 
-input,
-select {
-  width: 100%;
-  height: 47px;
-  padding: 8px;
-  background-color: white;
-  font-weight: 700;
-}
-
-h2 {
-  font-size: 1rem;
-  font-weight: 500;
-  text-align: center;
-  margin: 5px;
-  color: #686976;
-  border-radius: 1.5px;
-  border-bottom: 3px solid white;
-
-  &.active {
-    color: black;
-    border-bottom-color: $red;
-  }
-
-  &:hover {
-    cursor: pointer;
-  }
-}
-
-.input-group {
-  height: 51px;
-  font-weight: 400;
-  color: #8d8d8d;
-  border: 2px solid #8d8d8d;
-  border-radius: 8px;
-  padding: 0 10px;
-  grid-column: auto / span 2;
-
-  input {
-    width: 50%;
+  input,
+  select {
+    width: 100%;
+    height: 47px;
+    padding: 8px;
+    background-color: white;
     font-weight: 700;
   }
 
-  .select-group {
-    float: right;
-    border: none;
-    border-radius: 0px;
-    border-left: 2px solid;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-right: 0;
-  }
+  h2 {
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+    margin: 5px;
+    color: #686976;
+    border-radius: 1.5px;
+    border-bottom: 3px solid white;
 
-  &:focus-within {
-    border-color: black;
-    color: black;
-  }
-}
-
-.select-group {
-  font-weight: 400;
-  color: #8d8d8d;
-  border: 2px solid #8d8d8d;
-  border-radius: 8px;
-  padding: 0 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  &:focus-within {
-    border-color: black;
-    color: black;
-  }
-}
-
-option {
-  height: 64px;
-}
-
-.vehicle-year,
-.vehicle-price {
-  height: 51px;
-  color: #8d8d8d;
-  border: 2px solid #8d8d8d;
-  border-radius: 8px;
-  &:focus-within {
-    border-color: black;
-    color: black;
-  }
-}
-
-span {
-  font-size: 12px;
-  font-weight: 700;
-  line-height: 51px;
-  color: $red;
-  text-align: center;
-  &:hover {
-    cursor: pointer;
-  }
-}
-
-.search-options {
-  grid-column: auto / span 2;
-  grid-column-start: 3;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  h5 {
-    cursor: pointer;
-  }
-
-  button {
-    width: 70%;
-    height: 51px;
-  }
-}
-
-.new-used {
-  grid-column: auto / span 3;
-  display: flex;
-  margin-bottom: -10px;
-
-  .checkbox {
-    width: fit-content;
-    height: 35px;
-    padding: 5px;
-    border: 2px solid #8d8d8d;
-    border-radius: 8px;
-    color: #8d8d8d;
-    margin-right: 5px;
-    transition: all 0.5s;
+    &.active {
+      color: black;
+      border-bottom-color: $primary-color;
+    }
 
     &:hover {
       cursor: pointer;
-      color: $red;
-      border-color: $red;
     }
-
-    &.checked {
-      color: $red;
-      border-color: $red;
-    }
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  section {
-    height: auto;
-    max-height: fit-content;
-  }
-
-  h2,
-  select,
-  .select-group {
-    grid-column: auto / span 2;
   }
 
   .input-group {
-    grid-column: auto / span 4;
-  }
-}
+    height: 51px;
+    font-weight: 400;
+    color: #8d8d8d;
+    border: 2px solid #8d8d8d;
+    border-radius: 8px;
+    padding: 0 10px;
+    grid-column: auto / span 2;
 
-@media only screen and (max-width: 640px) {
-  span,
-  .select-group,
-  .search-options {
-    grid-column: auto / span 4;
+    input {
+      width: 50%;
+      font-weight: 700;
+    }
+
+    .select-group {
+      float: right;
+      border: none;
+      border-radius: 0px;
+      border-left: 2px solid;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-right: 0;
+    }
+
+    &:focus-within {
+      border-color: black;
+      color: black;
+    }
+  }
+
+  .select-group {
+    font-weight: 400;
+    color: #8d8d8d;
+    border: 2px solid #8d8d8d;
+    border-radius: 8px;
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &:focus-within {
+      border-color: black;
+      color: black;
+    }
+  }
+
+  option {
+    height: 64px;
   }
 
   .vehicle-year,
   .vehicle-price {
-    grid-column: auto / span 2;
+    height: 51px;
+    color: #8d8d8d;
+    border: 2px solid #8d8d8d;
+    border-radius: 8px;
+    &:focus-within {
+      border-color: black;
+      color: black;
+    }
   }
-}
 
-@media only screen and (max-width: 425px) {
-  .input-group {
-    input,
-    .select-group {
-      width: 40%;
+  span {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 51px;
+    color: $primary-color;
+    text-align: center;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .search-options {
+    grid-column: auto / span 2;
+    grid-column-start: 3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h5 {
+      cursor: pointer;
+    }
+
+    button {
+      width: 70%;
+      height: 51px;
     }
   }
 
   .new-used {
-    grid-column: auto / span 4;
-    justify-content: center;
-  }
-}
+    grid-column: auto / span 3;
+    display: flex;
+    margin-bottom: -10px;
 
-@media only screen and (max-width: 375px) {
-  section {
-    padding: 10px;
-  }
+    .checkbox {
+      width: fit-content;
+      height: 35px;
+      padding: 5px;
+      border: 2px solid #8d8d8d;
+      border-radius: 8px;
+      color: #8d8d8d;
+      margin-right: 5px;
+      transition: all 0.2s;
 
-  .input-group {
-    input {
-      width: 30%;
+      &:hover {
+        cursor: pointer;
+        color: black;
+        border-color: black;
+      }
+
+      &.checked {
+        color: $primary-color;
+        border-color: $primary-color;
+      }
     }
+  }
+
+  @media only screen and (max-width: 768px) {
+    section {
+      height: auto;
+      max-height: fit-content;
+    }
+
+    h2,
+    select,
     .select-group {
-      width: 45%;
+      grid-column: auto / span 2;
+    }
+
+    .input-group {
+      grid-column: auto / span 4;
+    }
+  }
+
+  @media only screen and (max-width: 640px) {
+    span,
+    .select-group,
+    .search-options {
+      grid-column: auto / span 4;
+    }
+
+    .vehicle-year,
+    .vehicle-price {
+      grid-column: auto / span 2;
+    }
+  }
+
+  @media only screen and (max-width: 425px) {
+    .input-group {
+      input,
+      .select-group {
+        width: 40%;
+      }
+    }
+
+    .new-used {
+      grid-column: auto / span 4;
+      justify-content: center;
+    }
+  }
+
+  @media only screen and (max-width: 375px) {
+    section {
+      padding: 10px;
+    }
+
+    .input-group {
+      input {
+        width: 30%;
+      }
+      .select-group {
+        width: 45%;
+      }
     }
   }
 }

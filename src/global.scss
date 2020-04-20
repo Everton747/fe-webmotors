@@ -3,6 +3,8 @@
 $red: #f3123c;
 $white: #ffffff;
 
+$primary-color: $red;
+
 * {
   margin: 0;
   padding: 0;
@@ -13,6 +15,7 @@ $white: #ffffff;
 
 ul, ol, li {
   list-style: none;
+  margin-bottom: 12px;
 }
 
 body {

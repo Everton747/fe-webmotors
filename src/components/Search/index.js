@@ -15,9 +15,6 @@ export default function Search() {
   const [model, updateModel] = useState([]);
   const [version, updateVersion] = useState([]);
 
-  const [year, updateYear] = useState('');
-  const [priceRate, updatePriceRate] = useState('');
-
   useEffect(() => {
     const response = api.get('/make');
     response.then(res => { updateMake(res.data) });
@@ -74,9 +71,15 @@ export default function Search() {
         </div>
         <select type="text" className="vehicle-year">
           <option value="">Ano Desejado</option>
+          <option value="">2013</option>
+          <option value="">2012</option>
+          <option value="">2011</option>
         </select>
         <select type="text" className="vehicle-price">
-          <option value="">Faixa de preços</option>
+          <option value="">Faixa de preço</option>
+          <option value="">20 a 40 mil</option>
+          <option value="">40 a 60 mil</option>
+          <option value="">60 a 70 mil</option>
         </select>
         <div className="select-group input-group">
           Versão:
@@ -90,7 +93,7 @@ export default function Search() {
 
         <span> > Busca Avançada</span>
         <div className="search-options">
-          <h5>Limpar Filtros</h5>
+          {/* <h5>Limpar Filtros</h5> */}
           <button>Ver Ofertas</button>
         </div>
       </section>
