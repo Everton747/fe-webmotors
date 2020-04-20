@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import InfiniteScroll from 'react-infinite-scroller';
 
 import './styles.scss';
@@ -16,7 +16,7 @@ export default function Index() {
 
   function handleMoreVehicles(e) {
     const response = api.get('/vehicles', { params: { 'Page': e } });
-    response.then(res => { updateVehicles(vehicles.concat(res.data)) });
+    response.then(res => { updateVehicles(vehicles.concat(res.data)); });
     if(e > 3) updateHasMore(false);
   }
 
@@ -25,13 +25,13 @@ export default function Index() {
       <Header></Header>
       <Search className="search-bar"></Search>
       <ul>
-      <InfiniteScroll
-        pageStart={0}
-        loadMore={e => handleMoreVehicles(e)}
-        hasMore={hasMore}
-      >
-        {vehicles.map((vehicle) => <li key={vehicle.ID}><Card data={vehicle}></Card></li>)}
-      </InfiniteScroll>
+        <InfiniteScroll
+          pageStart={ 0 }
+          loadMore={ e => handleMoreVehicles(e) }
+          hasMore={ hasMore }
+        >
+          {vehicles.map((vehicle) => <li key={ vehicle.ID }><Card data={ vehicle }></Card></li>)}
+        </InfiniteScroll>
       </ul>
     </>
   );

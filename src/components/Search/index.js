@@ -16,17 +16,17 @@ export default function Search() {
 
   useEffect(() => {
     const response = api.get('/make');
-    response.then(res => { updateMake(res.data) });
+    response.then(res => { updateMake(res.data); });
   }, []);
 
   function handleUpdateModels(e) {
     const response = api.get('/model/', { params: { 'MakeID': e.target.value } });
-    response.then(res => { updateModel(res.data) });
+    response.then(res => { updateModel(res.data); });
   }
 
   function handleUpdateVersions(e) {
     const response = api.get('/version/', { params: { 'ModelID': e.target.value } });
-    response.then(res => { updateVersion(res.data) });
+    response.then(res => { updateVersion(res.data); });
   }
 
   function handleClearSearch() {
@@ -42,8 +42,8 @@ export default function Search() {
         <h2 className="active">Comprar Carros</h2>
         <h2>Comprar Motos</h2>
         <div className="new-used">
-          <div className={zeroKm ? 'checkbox checked' : 'checkbox'} onClick={e => updateZeroKm(!zeroKm)}>✔ Novos</div>
-          <div className={used ? 'checkbox checked' : 'checkbox'} onClick={e => updateUsed(!used)}>✔ Usados</div>
+          <div className={zeroKm ? 'checkbox checked' : 'checkbox'} onClick={() => updateZeroKm(!zeroKm)}>✔ Novos</div>
+          <div className={used ? 'checkbox checked' : 'checkbox'} onClick={() => updateUsed(!used)}>✔ Usados</div>
         </div>
         <div className="input-group">
           Onde:

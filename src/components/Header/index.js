@@ -6,7 +6,7 @@ import './styles.scss';
 export default function Header() {
   return (
     <header>
-      <img src={logo} alt="logo"/>
+      <img src={logo} alt="logo" />
     </header>
   );
 }
